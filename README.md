@@ -1,4 +1,4 @@
-# 5-fold validation
+# CroMAM: A Cross-Magnification Attention Feature Fusion Model for Predicting Genetic Status and Survival of Gliomas using Histological Images
 
 ## 0. Obtaining the datasets from TCGA / Use HistoQC to preprocess WSI and obtain the usable area mask
 #### histoqc : https://github.com/choosehappy/HistoQC
