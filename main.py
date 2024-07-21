@@ -78,7 +78,7 @@ def main_function(folds, folds_best):
 
     if args.mode == 'train':
         hf.fit(folds, checkpoints_folder=Path(args.checkpoint_dir,
-                                              f"{args.cancer}_{args.outcome}_{TIMESTR}_{args.model_name}_{magnification}"))  # 模型从此处开始训练和验证
+                                              f"{args.cancer}_{args.outcome}_{TIMESTR}_{args.model_name}_{magnification}")) 
         folds_best.update({f"fold-{folds + 1}": float(str(hf.best_metric)[:6])})
         return 'val'
 
