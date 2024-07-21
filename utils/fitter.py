@@ -360,7 +360,7 @@ class MultiHybridFitter:
 
         # Early stopping
         if self.es.step(performance_measure):
-            return 1, performance_measure.item()  # early stop criterion is met, we can stop now
+            return 1, performance_measure.item()  # early stop 
         return 0, performance_measure.item()
 
     def fit(self, fold, checkpoints_folder='checkpoints'):
@@ -369,7 +369,7 @@ class MultiHybridFitter:
         fig, a = plt.subplots(1, 1)
         xs = []
         ys = []
-        for epoch in range(self.current_epoch, self.args.epochs + 1):  # 训练的epoch  option中设定
+        for epoch in range(self.current_epoch, self.args.epochs + 1):  
             return_code, auc = self.fit_epoch(epoch=epoch)
             auc = float(str(auc)[:6])
             # Draw auc value change graph
@@ -392,7 +392,7 @@ class MultiHybridFitter:
                 break
         magnification = list(self.args.magnification.split(','))
         plt.savefig(
-            f'./logs/AucLineChart/{self.args.cancer}_{self.args.outcome}_{self.args.model_name}_val_auc_X{magnification}_fold_{fold + 1}.png')  # 保存auc图
+            f'./logs/AucLineChart/{self.args.cancer}_{self.args.outcome}_{self.args.model_name}_val_auc_X{magnification}_fold_{fold + 1}.png') 
         plt.close(fig)
         # Save the best result of each fold
         np.savetxt(f'{os.path.join(self.checkpoints_folder, f"{self.best_metric}.txt")}',
