@@ -119,17 +119,17 @@ class MultiHybridFitter:
             if param.requires_grad:
                 backbone_params.append(param)
         # SIB
-        for name, param in self.model.vit1.named_parameters():
+        for name, param in self.model.sib1.named_parameters():
             if param.requires_grad:
                 SRPFIM_params.append(param)
-        for name, param in self.model.vit2.named_parameters():
+        for name, param in self.model.sib2.named_parameters():
             if param.requires_grad:
                 SRPFIM_params.append(param)
         # MFB
-        for name, param in self.model.clste1.named_parameters():
+        for name, param in self.model.mfm1.named_parameters():
             if param.requires_grad:
                 MRFFM_params.append(param)
-        for name, param in self.model.clste2.named_parameters():
+        for name, param in self.model.mfm2.named_parameters():
             if param.requires_grad:
                 MRFFM_params.append(param)
         # classifier
